@@ -1,0 +1,36 @@
+<div class=" container-fluid main-div">
+  <div class="row">
+    <div class="col-md-11"></div>
+    <div class="col-md-1">
+      <a routerLink='' style="color: #b3d1ff"><i class="fa fa-window-close fa-2x close-icon-div"></i></a>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-4">
+
+    </div>
+
+    <div class="login-div col-md-4">
+      <div class="heading">Login</div>
+      <div class="form-group">
+        <label class="form-element">Username:</label>
+        <input type="text" class="form-control" placeholder="Username" ([ngModel])="username">
+        <label class="form-element">Password:</label>
+        <input type="password" class="form-control" placeholder="Password" ([ngModel])="password">
+        <button type="submit" class="form-element form-control">Login</button>
+        <br><br>
+        <div style="text-align: center;">
+          <p>New to <span style="font-family: 'Pacifico', serif">Transport Facile</span>? <a routerLink='register'>Create an account</a></p>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-4">
+      
+    </div>
+  </div>
+</div>
+
+<router-outlet></router-outlet>

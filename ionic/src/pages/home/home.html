@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>Home</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <form (ngSubmit)="sendInfo()">
+    <ion-list>
+      <ion-list-header class="noBorder">
+        Personal Details:
+      </ion-list-header>
+      
+      <ion-item>
+        <ion-label color="theme" stacked>Contact Number</ion-label>
+        <ion-input type="number" [(ngModel)]="infoForm.contactNumber" name="contactNumber"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="theme" stacked>Email</ion-label>
+        <ion-input type="email" [(ngModel)]="infoForm.email" name="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label color="theme" stacked>Drop-off Point</ion-label>
+        <ion-input color="theme" type="text" [(ngModel)]="infoForm.dropoffPoint" name="dropoffPoint"></ion-input>
+      </ion-item>
+    
+    </ion-list>
+
+    <ion-list radio-group [(ngModel)]="infoForm.serviceType" name="serviceType">
+      <ion-list-header class="noBorder">
+        Please specify the service type:
+      </ion-list-header>
+      <ion-item>
+        <ion-label>Early van</ion-label>
+        <ion-radio value="early"></ion-radio>
+      </ion-item>
+    
+      <ion-item>
+        <ion-label>Late van</ion-label>
+        <ion-radio value="late"></ion-radio>
+      </ion-item>
+    </ion-list>
+  
+    <button ion-button block outline type="submit" color="theme">Send</button>
+  </form>
+</ion-content>

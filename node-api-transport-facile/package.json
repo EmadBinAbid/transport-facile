@@ -1,0 +1,17 @@
+{
+  "name": "api-transport-facile",
+  "version": "1.0.0",
+  "description": "REST API to facilitate transport-facile and transport-facile-admin",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Emad Bin Abid",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.4",
+    "express": "^4.16.3",
+    "jsonwebtoken": "^8.3.0",
+    "mongoose": "^5.1.7"
+  }
+}

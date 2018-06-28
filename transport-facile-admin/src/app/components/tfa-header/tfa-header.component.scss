@@ -1,0 +1,53 @@
+@import '../../../styles';
+
+.main-div
+{
+    margin: 0px;
+    padding: 8px 15px 0px 15px;
+    background-color: white;
+    color: $theme;
+    border-radius: 0px;
+    font-size: 13px;
+}
+
+h1
+{
+    font-family: "Pacifico", serif;
+    margin: 0px 0px 15px 0px;
+}
+
+button
+{
+    border: none;
+    background-color: $theme;
+    color: $light;
+    padding: 5px 10px 5px 10px;
+    border-radius: 20px;
+    transition: transform .2s;
+}
+
+button:active, button:focus
+{
+    outline: none;
+}
+
+button:hover
+{
+    transform: scale(1.1);
+}
+
+img
+{
+    width: 80px;
+    height: 40px;
+}
+
+.login-div
+{
+    margin: 10px 0px 0px 0px;
+}
+
+a
+{
+    color: $theme;
+}

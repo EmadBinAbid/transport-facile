@@ -1,0 +1,13 @@
+@import '../../../styles';
+
+.main-div
+{
+    background: $theme;
+    border-top-left-radius: $border-top-left;
+    border-top-right-radius: $border-top-right;
+}
+
+h1
+{
+    color: $light;
+}

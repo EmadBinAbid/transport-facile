@@ -1,0 +1,32 @@
+/* You can add global styles to this file, and also import other style files */
+
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.css";
+
+//Colors
+$primary:           #488aff;
+$secondary:         #32db64;
+$danger:            #f53d3d;
+$light:             #f4f4f4;
+$dark:              #222;
+$darkyellow:        #ff9900;
+
+$theme:             #ff0066;
+$theme-light:       #ff4d94;
+$theme-dark:        #e6005c;
+$theme-background:  #000000;
+
+//Border sizes
+$border-top-left: 10px;
+$border-top-right: 10px;
+$border-bottom-left: 10px;
+$border-bottom-right: 10px;
+
+
+
+body
+{
+    margin: 0px;
+    padding: 0px;
+    // background: $dark;
+}

@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Partners
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar>
+    <ion-searchbar [(ngModel)]="searchedText" (input)="search()"></ion-searchbar>
+  </ion-toolbar>
+  <ion-list>
+    <ng-container *ngFor="let partner of partnersObject.partner">
+      <ion-item *ngIf="partner.isDisplayed === true">
+        {{ partner.name }}
+      </ion-item>
+    </ng-container>
+  </ion-list>
+</ion-content>
