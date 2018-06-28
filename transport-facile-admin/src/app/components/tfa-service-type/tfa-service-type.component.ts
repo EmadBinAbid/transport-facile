@@ -11,5 +11,4 @@ export class TFAServiceTypeComponent implements OnInit {
 
   ngOnInit() {
   }
-
 }

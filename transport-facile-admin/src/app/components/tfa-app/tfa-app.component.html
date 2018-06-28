@@ -1,63 +1,10 @@
+<!-- <div>
+    <app-tfa-header></app-tfa-header>
+</div> -->
+
 <div class="main-div">
     <div>
-        <app-tfa-header></app-tfa-header>
-    </div>
-
-
-    <div class="menu-div">
-        <div class="row">
-            <div class="col-md-2 login-div">
-                <button (click)="setMenuBoolean()">
-                    <i class="fa fa-bars"></i> Menu </button>
-            </div>
-            <div class="col-md-10">
-
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-md-2 menu">
-                <div>
-                    <div class="menu-items" (click)="navigate(0)">
-                        Dashboard
-                    </div>
-                    
-                    <div class="menu-items" (click)="navigate(1)">
-                        Routes
-                    </div>
-                    
-                    <div class="menu-items" (click)="navigate(2)">
-                        Students
-                    </div>
-
-                    <div class="menu-items" (click)="navigate(3)">
-                        Early/Late Service
-                    </div>
-                </div>
-                
-            </div>
-
-            <div class="col-md-9">
-                <div *ngIf="currentMenuIndex===0">
-                    <app-tfa-dashboard></app-tfa-dashboard>
-                </div>
-
-                <div *ngIf="currentMenuIndex===1">
-                    <app-tfa-routes></app-tfa-routes>
-                </div>
-
-                <div *ngIf="currentMenuIndex===2">
-                    <app-tfa-students></app-tfa-students>
-                </div>
-                
-                <div *ngIf="currentMenuIndex===3">
-                    <app-tfa-service-type></app-tfa-service-type>
-                </div>
-            </div>
-
-            <div class="col-md-1"></div>
-        </div>
-
+        <app-tfa-menu></app-tfa-menu>
     </div>
 </div>
 

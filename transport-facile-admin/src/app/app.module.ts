@@ -16,6 +16,8 @@ import { RouteService } from './services/RouteService/route.service';
 import { TFAStudentsComponent } from './components/tfa-students/tfa-students.component';
 import { TFARoutesComponent } from './components/tfa-routes/tfa-routes.component';
 import { TFAServiceTypeComponent } from './components/tfa-service-type/tfa-service-type.component';
+import { TFANewServiceMessageComponent } from './components/tfa-new-service-message/tfa-new-service-message.component';
+import { TFAMenuComponent } from './components/tfa-menu/tfa-menu.component';
 
 
 const appRoutes: Routes = [
@@ -26,14 +28,12 @@ const appRoutes: Routes = [
     { path: 'register', component: TFARegisterComponent}
   ]},
   { path: 'app', component: TFAAppComponent, children: [
-    { path: 'app/dashboard', redirectTo: 'dashboard', pathMatch: 'full'},
-    { path: 'app/routes', redirectTo: 'routes', pathMatch: 'full'},
-    { path: 'app/students', redirectTo: 'students', pathMatch: 'full'},
-    { path: 'app/serviceType', redirectTo: 'serviceType', pathMatch: 'full'},
     { path: 'dashboard', component: TFADashboardComponent },
     { path: 'routes', component: TFARoutesComponent },
     { path: 'students', component: TFAStudentsComponent },
-    { path: 'serviceType', component: TFAServiceTypeComponent }
+    { path: 'serviceType', component: TFAServiceTypeComponent, children: [
+      { path: 'newMessage', component: TFANewServiceMessageComponent }
+    ] }
   ]}
 ];
 
@@ -48,7 +48,9 @@ const appRoutes: Routes = [
     TFAAppComponent,
     TFAStudentsComponent,
     TFARoutesComponent,
-    TFAServiceTypeComponent
+    TFAServiceTypeComponent,
+    TFANewServiceMessageComponent,
+    TFAMenuComponent
   ],
   imports: [
     BrowserModule,

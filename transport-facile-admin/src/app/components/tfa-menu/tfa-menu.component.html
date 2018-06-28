@@ -1,0 +1,40 @@
+<div class="menu-div">
+  <div class="row">
+    <div class="col-md-2 login-div">
+      <button (click)="setMenuBoolean()">
+        <i class="fa fa-bars"></i> Menu </button>
+    </div>
+    <div class="col-md-10">
+
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md-2 menu">
+      <div>
+        <div class="menu-items" (click)="menuItemSelected(0)">
+          Dashboard
+        </div>
+
+        <div class="menu-items" (click)="menuItemSelected(1)">
+          Routes
+        </div>
+
+        <div class="menu-items" (click)="menuItemSelected(2)">
+          Students
+        </div>
+
+        <div class="menu-items" (click)="menuItemSelected(3)">
+          Early/Late Service
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col-md-9">
+
+    </div>
+
+    <div class="col-md-1"></div>
+  </div>
+</div>
