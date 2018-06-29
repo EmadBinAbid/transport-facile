@@ -18,6 +18,7 @@ import { TFARoutesComponent } from './components/tfa-routes/tfa-routes.component
 import { TFAServiceTypeComponent } from './components/tfa-service-type/tfa-service-type.component';
 import { TFANewServiceMessageComponent } from './components/tfa-new-service-message/tfa-new-service-message.component';
 import { TFAMenuComponent } from './components/tfa-menu/tfa-menu.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 
 const appRoutes: Routes = [
@@ -55,7 +56,9 @@ const appRoutes: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    RouterModule.forRoot(appRoutes),
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [RouteService],
   bootstrap: [AppComponent]
