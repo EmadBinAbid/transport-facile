@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { NotificationsProvider } from '../../providers/notifications/notifications';
+import { Notification } from '../../interfaces/notification.interface';
 
 @Component({
   selector: 'page-about',
@@ -8,7 +9,7 @@ import { NotificationsProvider } from '../../providers/notifications/notificatio
 })
 export class AboutPage {
 
-  notificationsList: Array<string>;
+  notificationsList: Array<Object>;
 
   constructor(
     public navCtrl: NavController,
@@ -24,7 +25,10 @@ export class AboutPage {
 
   loadNotificationsList()
   {
-    this.notificationsList = this.notificationsProvider.getNotificationsList();
+    this.notificationsProvider.getNotificationsList()
+    .subscribe( (result) => {
+      this.notificationsList = result.post;
+    } );
   }
 
 }

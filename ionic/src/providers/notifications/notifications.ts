@@ -1,6 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
+import { tap } from 'rxjs/operators';
+import { Notification } from '../../interfaces/notification.interface';
 
 /*
   Generated class for the NotificationsProvider provider.
@@ -11,19 +13,22 @@ import { Http } from '@angular/http';
 @Injectable()
 export class NotificationsProvider {
 
-  notificationsList = [
-    "Kashif Pirwani updated: 1",
-    "Kashif Pirwani updated: 2",
-    "Kashif Pirwani updated: 3"
-  ];
+  notificationsList = [];
 
-  constructor() {
+  constructor(
+    private http: HttpClient
+  ) {
     console.log('Hello NotificationsProvider Provider');
   }
 
   getNotificationsList()
   {
-    return this.notificationsList;
+    return this.http.get<Notification>(`http://localhost:3000/post/all-public-posts`)
+    .pipe(
+      tap( (response) => {
+        this.notificationsList = response.post;
+      } )
+    );
   }
 
 }

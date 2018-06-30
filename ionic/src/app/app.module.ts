@@ -14,6 +14,12 @@ import { NotificationsProvider } from '../providers/notifications/notifications'
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { HttpModule } from '@angular/http';
 import { PartnersProvider } from '../providers/partners/partners';
+import { LoginRegisterPage } from '../pages/login-register/login-register';
+import { LoginComponent } from '../components/login/login';
+import { FormsModule } from '@angular/forms';
+import { LoginProvider } from '../providers/login/login';
+
+
 
 @NgModule({
   declarations: [
@@ -21,15 +27,15 @@ import { PartnersProvider } from '../providers/partners/partners';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
-    // HttpClientModule,
-    // HttpClient,
-    // HttpModule
+    TabsPage,
+    LoginRegisterPage,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
     IonicModule.forRoot(MyApp),
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -37,14 +43,17 @@ import { PartnersProvider } from '../providers/partners/partners';
     AboutPage,
     ContactPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    LoginRegisterPage,
+    LoginComponent
   ],
   providers: [
     StatusBar,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     NotificationsProvider,
-    PartnersProvider
+    PartnersProvider,
+    LoginProvider
   ]
 })
 export class AppModule {}

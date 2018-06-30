@@ -1,0 +1,22 @@
+<!-- Generated template for the LoginComponent component -->
+<div class="main-div">
+
+  <img src="../../assets/imgs/logo.png" class="logo">
+
+  <form (ngSubmit)="loginUser()" class="loginForm" >
+    <div>
+      <ion-item class="loginItem">
+        <ion-label color="light" stacked>Student ID</ion-label>
+        <ion-input class="loginItem" type="text" [(ngModel)]="loginForm.studentId" name="studentId"></ion-input>
+      </ion-item>
+
+      <ion-item class="loginItem">
+        <ion-label color="light" stacked>Password</ion-label>
+        <ion-input class="loginItem" color="theme" type="password" [(ngModel)]="loginForm.password" name="password"></ion-input>
+      </ion-item>
+
+    </div>
+
+    <button ion-button block outline type="submit" color="light">Login</button>
+  </form>
+</div>

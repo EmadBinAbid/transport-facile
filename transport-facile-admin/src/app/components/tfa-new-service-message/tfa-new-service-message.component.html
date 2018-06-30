@@ -19,20 +19,27 @@
       <label class="form-element">Select service type:</label>
       <br>
       <label class="checkbox form-element check-box">
-        <input type="checkbox" name="early" ngModel> Early van service </label>
+        <input type="checkbox" (click)="earlyClicked()" name="early" ngModel> Early van service </label>
       <label class="checkbox form-element">
-        <input type="checkbox" name="late" ngModel> Late van service </label>
+        <input type="checkbox" (click)="lateClicked()" name="late" ngModel> Late van service </label>
       <br>
 
-      <label class="form-element">Time
-        <span class="small-text">(Early Service)</span>:</label>
-      <input class="form-element form-control" type="datetime-local" name="earlyTime" ngModel>
+      <div *ngIf="isEarlyService === true">
+        <label class="form-element">Time
+          <span class="small-text">(Early Service)</span>:</label>
+        <input class="form-element form-control" type="datetime-local" name="earlyTime" ngModel>
+      
+      </div>
+      
+      <div *ngIf="isLateService === true">
+        <label class="form-element">Time
+          <span class="small-text">(Late Service)</span>:</label>
+        <input class="form-element form-control" type="datetime-local" name="lateTime" ngModel>
+      </div>
 
-      <label class="form-element">Time
-        <span class="small-text">(Late Service)</span>:</label>
-      <input class="form-element form-control" type="datetime-local" name="lateTime" ngModel>
-
-      <div *ngIf="true"></div>
+      <label class="form-element">Event
+      </label>
+      <input class="form-element form-control" type="text" name="event" ngModel>
 
       <button type="submit" class="form-control form-element">Send</button>
     </form>
