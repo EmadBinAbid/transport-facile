@@ -231,7 +231,7 @@ url: domain/response/responseByPostId?postId
 request object: null
 response object: sends a json object of type { "response": array_of_objects }. If error, then sends "Unauthorized"
 */
-exports.getAllPublicPosts = function (expressInstance) 
+exports.getResponseByPostId = function (expressInstance) 
 {
     expressInstance.get('/response/responseByPostId', (req, res) => 
     {
@@ -243,7 +243,7 @@ exports.getAllPublicPosts = function (expressInstance)
             }
             else 
             {
-                res.json({ "post": dbObject });
+                res.json({ "response": dbObject });
             }
         });
     });

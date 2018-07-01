@@ -28,9 +28,19 @@ export class NewMessageService {
 
     return this.http.post(`http://localhost:3000/post`, newMessage, { headers })
     .pipe(
-      tap( () => {
+      tap( (response) => {
         console.log("Posted.");
       } )
+    );
+  }
+
+  getAllMessages()
+  {
+    return this.http.get(`http://localhost:3000/post/all-public-posts`)
+    .pipe(
+      tap( (response) => {
+        console.log("All Public Posts.");
+      })
     );
   }
 }

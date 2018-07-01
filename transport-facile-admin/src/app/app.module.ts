@@ -20,6 +20,7 @@ import { TFAMenuComponent } from './components/tfa-menu/tfa-menu.component';
 import { RouteService } from './services/RouteService/route.service';
 import { TFAServiceTypeComponent } from './components/tfa-service-type/tfa-service-type.component';
 import { TFANewServiceMessageComponent } from './components/tfa-new-service-message/tfa-new-service-message.component';
+import { TFAViewServiceMessageComponent } from './components/tfa-view-service-message/tfa-view-service-message.component';
 
 const appRoutes: Routes = [
   { path: '', component: TFALandingPageComponent, children: [
@@ -33,7 +34,8 @@ const appRoutes: Routes = [
     { path: 'routes', component: TFARoutesComponent },
     { path: 'students', component: TFAStudentsComponent },
     { path: 'serviceType', component: TFAServiceTypeComponent, children: [
-      { path: 'newMessage', component: TFANewServiceMessageComponent }
+      { path: 'newMessage', component: TFANewServiceMessageComponent },
+      { path: 'viewMessages', component: TFAViewServiceMessageComponent }
     ] }
   ]}
 ];
@@ -51,7 +53,8 @@ const appRoutes: Routes = [
     TFARoutesComponent,
     TFAServiceTypeComponent,
     TFANewServiceMessageComponent,
-    TFAMenuComponent
+    TFAMenuComponent,
+    TFAViewServiceMessageComponent
   ],
   imports: [
     BrowserModule,

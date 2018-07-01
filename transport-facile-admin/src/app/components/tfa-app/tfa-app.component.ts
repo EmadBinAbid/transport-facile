@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { relative } from 'path';
 
 @Component({
   selector: 'app-tfa-app',
