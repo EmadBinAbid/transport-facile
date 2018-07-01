@@ -13,6 +13,7 @@ export class ResponseService {
 
   getResponseByPostId(postId: string)
   {
+    console.log(postId);
     return this.http.get(`http://localhost:3000/response/responseByPostId?postId=${postId}`)
     .pipe(
       tap( (response) => {

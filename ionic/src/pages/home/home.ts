@@ -1,5 +1,8 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { ResponseProvider } from '../../providers/response/response';
+import { NotificationsProvider } from '../../providers/notifications/notifications';
+// import { AboutPage } from '../about/about';
 
 @Component({
   selector: 'page-home',
@@ -7,28 +10,51 @@ import { NavController } from 'ionic-angular';
 })
 export class HomePage {
 
+  contactNumber: string;
+  email: string;
+
   infoForm: Object =  {
-    contactNumber: "",
-    email: "",
     dropoffPoint: "",
     serviceType: ""
   };
 
-  constructor(public navCtrl: NavController) {
+  constructor(
+    public navCtrl: NavController,
+    private responseProvider: ResponseProvider,
+    private notificationProvider: NotificationsProvider
+    // private aboutPage: AboutPage
+  ) {
 
   }
 
-  sendInfo()
+  sendResponse()
   {
-    if(this.infoForm === "valid")
+    const response: Object = {
+      response: {
+        postId: this.notificationProvider.getLastNotification()["_id"],
+        dropoffPoint: this.infoForm["dropoffPoint"]
+      }
+    };
+
+    
+
+    if(this.infoForm["serviceType"] === "early")
     {
-      console.log(this.infoForm);
+      response["response"]["earlyService"] = true;
+      response["response"]["lateService"] = false;
     }
     else
     {
-      // console.log("Error!");
-      console.log(this.infoForm);
+      response["response"]["earlyService"] = false;
+      response["response"]["lateService"] = true;
     }
+
+    console.log(response);
+
+    this.responseProvider.addResponseByPostId(response)
+    .subscribe( (result)=> {
+      console.log(result);
+    } );
   }
 
 }

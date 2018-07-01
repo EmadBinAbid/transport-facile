@@ -31,4 +31,8 @@ export class NotificationsProvider {
     );
   }
 
+  getLastNotification()
+  {
+    return this.notificationsList[this.notificationsList.length - 1];
+  }
 }

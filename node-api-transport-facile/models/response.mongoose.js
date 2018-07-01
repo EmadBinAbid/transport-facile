@@ -33,6 +33,11 @@ const responseSchema = mongoose.Schema(
             type: Boolean,
             required: true
         },
+        dropoffPoint:
+        {
+            type: String,
+            required: true
+        },
         createdOn:
         {
             type: Date,
@@ -68,13 +73,16 @@ exports.addResponse = function(expressInstance, jwtInstance, verifyToken)
                     "userId": userData.user._id,
                     "postId": req.body.response.postId,
                     "lateService": req.body.response.lateService,
-                    "earlyService": req.body.response.earlyService
+                    "earlyService": req.body.response.earlyService,
+                    "dropoffPoint": req.body.response.dropoffPoint
                 };
 
                 ResponseModel.create(newResponse, (err, dbObject) => 
                 {
+                    console.log(newResponse);
                     if(err)
                     {
+                        console.log(err);
                         res.status(406).send("Not Acceptable");
                     }
                     else
@@ -243,6 +251,7 @@ exports.getResponseByPostId = function (expressInstance)
             }
             else 
             {
+                console.log(dbObject);
                 res.json({ "response": dbObject });
             }
         });

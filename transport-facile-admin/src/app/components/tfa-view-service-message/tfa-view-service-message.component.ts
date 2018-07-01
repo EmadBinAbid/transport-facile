@@ -35,12 +35,15 @@ export class TFAViewServiceMessageComponent implements OnInit {
 
   viewResponses(index: number)
   {
-    const postId: string = this.responseList[index]["postId"];
+    const postId: string = this.messageList[index]["_id"];
+    console.log(this.messageList);
     
     this.responseService.getResponseByPostId(postId)
     .subscribe( (result) => {
       this.responseList = result["response"];
     } );
+
+    console.log(this.responseList);
   }
 
 }

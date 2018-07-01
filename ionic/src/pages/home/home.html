@@ -5,7 +5,7 @@
 </ion-header>
 
 <ion-content padding>
-  <form (ngSubmit)="sendInfo()">
+  <form (ngSubmit)="sendResponse()">
     <ion-list>
       <ion-list-header class="noBorder">
         Personal Details:
@@ -13,12 +13,12 @@
       
       <ion-item>
         <ion-label color="theme" stacked>Contact Number</ion-label>
-        <ion-input type="number" [(ngModel)]="infoForm.contactNumber" name="contactNumber"></ion-input>
+        <ion-input type="number" [(ngModel)]="contactNumber" name="contactNumber"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label color="theme" stacked>Email</ion-label>
-        <ion-input type="email" [(ngModel)]="infoForm.email" name="email"></ion-input>
+        <ion-input type="email" [(ngModel)]="email" name="email"></ion-input>
       </ion-item>
 
       <ion-item>

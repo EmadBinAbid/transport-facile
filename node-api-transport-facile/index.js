@@ -44,6 +44,8 @@ postModel.getAllPosts(app, jwt, login.verifyToken);
 postModel.getAllPublicPosts(app);
 
 //responseModel
+responseModel.addResponse(app, jwt, login.verifyToken);
+responseModel.getResponseByPostId(app);
 
 
 //Validating User and generating JWT if User is valid.

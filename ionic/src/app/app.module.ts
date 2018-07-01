@@ -18,6 +18,7 @@ import { LoginRegisterPage } from '../pages/login-register/login-register';
 import { LoginComponent } from '../components/login/login';
 import { FormsModule } from '@angular/forms';
 import { LoginProvider } from '../providers/login/login';
+import { ResponseProvider } from '../providers/response/response';
 
 
 
@@ -53,7 +54,8 @@ import { LoginProvider } from '../providers/login/login';
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     NotificationsProvider,
     PartnersProvider,
-    LoginProvider
+    LoginProvider,
+    ResponseProvider
   ]
 })
 export class AppModule {}

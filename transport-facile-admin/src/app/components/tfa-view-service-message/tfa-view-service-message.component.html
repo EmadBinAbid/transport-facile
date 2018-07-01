@@ -16,7 +16,7 @@
 
     <div class="login-div col-md-10">
       <div class="heading">Message History</div>
-      <div class="message" *ngFor="let message of messageList; let i=index" (click)="viewResponse(i)">
+      <div class="message" *ngFor="let message of messageList; let i=index" (click)="viewResponses(i)">
         <span style="text-decoration: underline">Date</span>: {{ message.createdOn }},
         <span style="text-decoration: underline">Event</span>: {{ message.event }},
         <span style="text-decoration: underline">Posted by</span>: {{ message.adminId }},
@@ -37,7 +37,6 @@
     <div class="login-div col-md-10">
       <div class="heading">Responses</div>
       <div class="message" *ngFor="let response of responseList">
-        <span style="text-decoration: underline">Date</span>: {{ response.createdOn }},
         <span style="text-decoration: underline">Student ID</span>: {{ response.userId }},
         <span style="text-decoration: underline">Early service</span>: {{ response.earlyService }},
         <span style="text-decoration: underline">Late service</span>: {{ response.lateService }}

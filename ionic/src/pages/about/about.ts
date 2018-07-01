@@ -30,5 +30,4 @@ export class AboutPage {
       this.notificationsList = result.post;
     } );
   }
-
 }
